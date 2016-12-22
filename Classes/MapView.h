@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class Report, Product;
+@class Product;
+@protocol ReportSummary;
 
 @interface MapView : UIView {
 
 	NSDictionary *polygonsByCountryCode;
-	Report *report;
+	id<ReportSummary> report;
 	Product *selectedProduct;
 	NSString *selectedCountry;
 	UIImageView *pinView;
 }
 
-@property (nonatomic, retain) Report *report;
+@property (nonatomic, retain) id<ReportSummary> report;
 @property (nonatomic, retain) Product *selectedProduct;
 @property (nonatomic, retain) NSString *selectedCountry;
 

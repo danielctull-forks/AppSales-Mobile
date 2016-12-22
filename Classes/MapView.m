@@ -35,7 +35,7 @@
 	return polygonsByCountryCode;
 }
 
-- (void)setReport:(Report *)newReport
+- (void)setReport:(id<ReportSummary>)newReport
 {
 	if (report == newReport) return;
 	[newReport retain];
