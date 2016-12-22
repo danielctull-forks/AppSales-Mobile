@@ -1,0 +1,3 @@
+[submodule "Frameworks/Objective-Zip"]
+	path = Frameworks/Objective-Zip
+	url = git://github.com/gianlucabertani/Objective-Zip.git
