@@ -20,8 +20,8 @@
 #import "AboutViewController.h"
 #import "AccountStatusView.h"
 #import "KKPasscodeLock.h"
-#import "ZipFile.h"
-#import "ZipWriteStream.h"
+#import "OZZipFile.h"
+#import "OZZipWriteStream.h"
 
 #define kAddNewAccountEditorIdentifier		@"AddNewAccountEditorIdentifier"
 #define kEditAccountEditorIdentifier		@"EditAccountEditorIdentifier"
@@ -613,13 +613,13 @@
 		}
 		
 		self.exportedReportsZipPath = [exportPath stringByAppendingPathExtension:@"zip"];
-		ZipFile *zipFile = [[ZipFile alloc] initWithFileName:self.exportedReportsZipPath mode:ZipFileModeCreate];
+		OZZipFile *zipFile = [[OZZipFile alloc] initWithFileName:self.exportedReportsZipPath mode:OZZipFileModeCreate];
 		NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:exportPath error:NULL];
 		for (NSString *filename in files) {
 			NSString *path = [exportPath stringByAppendingPathComponent:filename];
 			NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:NULL];
 			NSDate *date = [attributes fileCreationDate];
-			ZipWriteStream *stream = [zipFile writeFileInZipWithName:filename fileDate:date compressionLevel:ZipCompressionLevelBest];
+			OZZipWriteStream *stream = [zipFile writeFileInZipWithName:filename fileDate:date compressionLevel:OZZipCompressionLevelBest];
 			NSData *data = [NSData dataWithContentsOfFile:path];
 			[stream writeData:data];
 			[stream finishedWriting];
