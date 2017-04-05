@@ -243,7 +243,7 @@
 
 - (void)changeColor:(UIButton *)sender
 {
-	int row = sender.tag;
+	NSInteger row = sender.tag;
 	Product *product = [self.visibleProducts objectAtIndex:row - 1];
 	
 	NSArray *palette = [UIColor crayonColorPalette];
@@ -260,7 +260,7 @@
 	}
 }
 
-- (void)colorPicker:(ColorPickerViewController *)picker didPickColor:(UIColor *)color atIndex:(int)colorIndex
+- (void)colorPicker:(ColorPickerViewController *)picker didPickColor:(UIColor *)color atIndex:(NSInteger)colorIndex
 {
 	Product *product = (Product *)picker.context;
 	product.color = color;

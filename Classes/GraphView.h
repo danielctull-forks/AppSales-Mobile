@@ -39,7 +39,7 @@
 	id<GraphViewDelegate> delegate;
 	
 	NSMutableDictionary *cachedValues;
-	int barsPerPage;
+	NSInteger barsPerPage;
 	CGFloat barWidth;
 	
 	NSRange visibleRange;
@@ -63,10 +63,10 @@
 @property (nonatomic, retain) NSString *title;
 
 - (NSRange)visibleBarRange;
-- (CGRect)frameForBarAtIndex:(int)index;
+- (CGRect)frameForBarAtIndex:(NSInteger)index;
 - (NSString *)labelTextForIndex:(NSUInteger)index;
 - (NSArray *)stackedValuesForBarAtIndex:(NSUInteger)index;
-- (void)setNumberOfBarsPerPage:(int)newBarsPerPage;
+- (void)setNumberOfBarsPerPage:(NSInteger)newBarsPerPage;
 - (void)reloadColors;
 - (void)reloadData;
 - (void)reloadValuesAnimated:(BOOL)animated;

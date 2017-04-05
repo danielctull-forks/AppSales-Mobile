@@ -19,13 +19,13 @@
 - (float)totalRevenueInBaseCurrencyForProductWithID:(NSString *)productID inCountry:(NSString *)country;
 - (float)totalRevenueInBaseCurrencyForProductWithID:(NSString *)productID;
 
-- (int)totalNumberOfPaidDownloadsForProductWithID:(NSString *)productID;
-- (int)totalNumberOfPaidDownloadsForProductWithID:(NSString *)productID inCountry:(NSString *)country;
+- (NSInteger)totalNumberOfPaidDownloadsForProductWithID:(NSString *)productID;
+- (NSInteger)totalNumberOfPaidDownloadsForProductWithID:(NSString *)productID inCountry:(NSString *)country;
 
-- (int)totalNumberOfUpdatesForProductWithID:(NSString *)productID;
-- (int)totalNumberOfEducationalSalesForProductWithID:(NSString *)productID;
-- (int)totalNumberOfGiftPurchasesForProductWithID:(NSString *)productID;
-- (int)totalNumberOfPromoCodeTransactionsForProductWithID:(NSString *)productID;
+- (NSInteger)totalNumberOfUpdatesForProductWithID:(NSString *)productID;
+- (NSInteger)totalNumberOfEducationalSalesForProductWithID:(NSString *)productID;
+- (NSInteger)totalNumberOfGiftPurchasesForProductWithID:(NSString *)productID;
+- (NSInteger)totalNumberOfPromoCodeTransactionsForProductWithID:(NSString *)productID;
 
 - (NSDictionary *)totalNumberOfPaidDownloadsByCountryAndProduct;
 

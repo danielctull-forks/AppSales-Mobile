@@ -122,8 +122,8 @@
 			}
 		}
 		
-		int i = 0;
-		int numberOfReportsAvailable = [availableReportDateStrings count];
+		NSUInteger i = 0;
+		NSUInteger numberOfReportsAvailable = [availableReportDateStrings count];
 		for (NSString *reportDateString in availableReportDateStrings) {
 			if ([self isCancelled]) {
 				[pool release];

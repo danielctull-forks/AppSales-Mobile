@@ -32,7 +32,7 @@ typedef enum DashboardViewMode {
 	BOOL showNumberOfSales;
 	BOOL showFiscalMonths;
 	BOOL showWeeks;
-	int selectedTab;
+	NSInteger selectedTab;
 	
 	GraphView *graphView;
 	

@@ -729,7 +729,7 @@
 							   (int)roundf([latestReport totalRevenueInBaseCurrencyForProductWithID:product.productID])];
 			[latestValueButton setTitle:label forState:UIControlStateNormal];
 		} else {
-			int latestNumber = 0;
+			NSInteger latestNumber = 0;
 			if (viewMode == DashboardViewModeSales) {
 				latestNumber = [latestReport totalNumberOfPaidDownloadsForProductWithID:product.productID];
 			} else if (viewMode == DashboardViewModeUpdates) {

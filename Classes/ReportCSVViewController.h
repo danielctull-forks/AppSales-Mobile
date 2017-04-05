@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@class Report;
+@protocol ReportSummary;
 
 @interface ReportCSVViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 
-	Report *report;
+	id<ReportSummary> report;
 	UIWebView *webView;
 }
 
 @property (nonatomic, retain) UIWebView *webView;
 
-- (id)initWithReport:(Report *)selectedReport;
+- (id)initWithReport:(id<ReportSummary>)selectedReport;
 
 @end
 
