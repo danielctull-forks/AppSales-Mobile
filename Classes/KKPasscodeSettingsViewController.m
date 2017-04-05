@@ -69,7 +69,7 @@
 - (void)eraseDataSwitchChanged:(id)sender 
 {
 	if (_eraseDataSwitch.on) {
-		NSString* title = [NSString stringWithFormat:@"All data in this app will be erased after %d failed passcode attempts.", [[KKPasscodeLock sharedLock] attemptsAllowed]];
+		NSString* title = [NSString stringWithFormat:@"All data in this app will be erased after %@ failed passcode attempts.", @([[KKPasscodeLock sharedLock] attemptsAllowed])];
 		
 		UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Enable" otherButtonTitles:nil];
 		[sheet showInView:self.view];

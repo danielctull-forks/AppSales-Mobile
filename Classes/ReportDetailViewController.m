@@ -261,7 +261,7 @@
 			NSDictionary *salesByProduct = [paidDownloadsByCountryAndProduct objectForKey:[country uppercaseString]];
 			sales = [[[salesByProduct allValues] valueForKeyPath:@"@sum.self"] integerValue];
 		}
-		NSString *subtitle = [NSString stringWithFormat:@"%@: %i %@", [[CountryDictionary sharedDictionary] nameForCountryCode:country], sales, sales == 1 ? @"sale" : @"sales"];
+		NSString *subtitle = [NSString stringWithFormat:@"%@: %@ %@", [[CountryDictionary sharedDictionary] nameForCountryCode:country], @(sales), sales == 1 ? @"sale" : @"sales"];
 		ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:country product:nil];
 		[sortedEntries addObject:entry];
 	}
@@ -284,7 +284,7 @@
 			}
 		}		
 		float percentage = (totalRevenue > 0) ? revenue / totalRevenue : 0.0;
-		NSString *subtitle = [NSString stringWithFormat:@"%i × %@", sales, [product displayName]];
+		NSString *subtitle = [NSString stringWithFormat:@"%@ × %@", @(sales), [product displayName]];
 		ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:nil product:product];
 		[entries addObject:entry];
 	}

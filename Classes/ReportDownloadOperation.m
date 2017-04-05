@@ -315,7 +315,7 @@
 							NSDateComponents *dateComponents = [calendar components:NSMonthCalendarUnit | NSYearCalendarUnit fromDate:labelDate];
 							NSInteger month = [dateComponents month];
 							NSInteger year = [dateComponents year];
-							NSString *paymentIdentifier = [NSString stringWithFormat:@"%@-%i-%i", vendorID, month, year];
+							NSString *paymentIdentifier = [NSString stringWithFormat:@"%@-%@-%@", vendorID, @(month), @(year)];
 							if (![existingPaymentIdentifiers containsObject:paymentIdentifier]) {
 								NSManagedObject *payment = [NSEntityDescription insertNewObjectForEntityForName:@"Payment" inManagedObjectContext:moc];
 								[payment setValue:account forKey:@"account"];

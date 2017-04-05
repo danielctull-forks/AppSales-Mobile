@@ -488,11 +488,11 @@
 		if (showWeeks) {
 			NSDateComponents *dateComponents = [calendar components:NSWeekdayOrdinalCalendarUnit fromDate:report.startDate];
 			NSInteger weekdayOrdinal = [dateComponents weekdayOrdinal];
-			return [NSString stringWithFormat:@"W%i", weekdayOrdinal];
+			return [NSString stringWithFormat:@"W%@", @(weekdayOrdinal)];
 		} else {
 			NSDateComponents *dateComponents = [calendar components:NSDayCalendarUnit fromDate:report.startDate];
 			NSInteger day = [dateComponents day];
-			return [NSString stringWithFormat:@"%i", day];
+			return [NSString stringWithFormat:@"%@", @(day)];
 		}
 	} else {
 		NSDateFormatter *monthFormatter = [[[NSDateFormatter alloc] init] autorelease];
@@ -741,7 +741,7 @@
 			} else if (viewMode == DashboardViewModePromoCodes) {
 				latestNumber = [latestReport totalNumberOfPromoCodeTransactionsForProductWithID:product.productID];
 			}
-			NSString *label = [NSString stringWithFormat:@"%i", latestNumber];
+			NSString *label = [NSString stringWithFormat:@"%@", @(latestNumber)];
 			[latestValueButton setTitle:label forState:UIControlStateNormal];
 		}
 		[latestValueButton addTarget:self action:@selector(switchGraphMode:) forControlEvents:UIControlEventTouchUpInside];
