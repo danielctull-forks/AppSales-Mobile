@@ -14,7 +14,7 @@
 
 @synthesize webView;
 
-- (id)initWithReport:(Report *)selectedReport
+- (id)initWithReport:(id<ReportSummary>)selectedReport
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
