@@ -13,7 +13,7 @@
 
 @interface ReportCSVViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 
-	id<ReportSummary> report;
+	NSObject<ReportSummary> *report;
 	UIWebView *webView;
 }
 
