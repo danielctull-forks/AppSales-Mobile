@@ -72,7 +72,7 @@
 + (UIColor *)randomColor 
 {
 	NSArray *colors = [self crayonColorPalette];
-	return [[self crayonColorPalette] objectAtIndex:arc4random_uniform(colors.count)];
+	return [[self crayonColorPalette] objectAtIndex:arc4random_uniform((uint32_t)colors.count)];
 }
 
 - (BOOL)red:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha 
